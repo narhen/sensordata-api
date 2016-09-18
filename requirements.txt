@@ -1,4 +1,7 @@
 flask
+setuptools
+flask-bcrypt
 flask-restful
+flask-jwt
 psycopg2
 sqlalchemy
