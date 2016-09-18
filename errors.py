@@ -1,4 +1,6 @@
-class InvalidUsage(Exception):
+from flask import jsonify
+
+class GenericException(Exception):
     status_code = 400
 
     def __init__(self, message, status_code=None, payload=None):
@@ -13,3 +15,7 @@ class InvalidUsage(Exception):
         rv['message'] = self.message
         return rv
 
+class InvalidUsage(GenericException):
+    pass
+class UserAlreadyExists(GenericException):
+    pass
