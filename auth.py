@@ -12,6 +12,9 @@ class Auth:
 
     def identity(self, payload):
         user = self.storage.get_user_by_id(payload["identity"])
+        if not user:
+            return None
+
         return AuthenticatedUser(user['id'], user['name'])
 
     def authenticate(self, username, password):
